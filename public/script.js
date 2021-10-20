@@ -8,9 +8,9 @@ function connect(){
     
     
     var mypeer = new Peer(undefined,{
-        path:'/peerjs',
+        path:'peerjs',
         host:'/',
-        port:3000
+        
         
     })
     mypeer.on('open',id=>{
