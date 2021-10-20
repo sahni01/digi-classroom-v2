@@ -1,5 +1,4 @@
-const bt = document.getElementById('bt')
-bt.addEventListener('click',connect)
+
 
 
 function connect(){
