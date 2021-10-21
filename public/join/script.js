@@ -7,7 +7,7 @@ function connect(){
     const socket = io('/')
     
     
-    var mypeer = new Peer(name,{
+    var mypeer = new Peer(undefined,{
         path:'peerjs',
         host:'/',
         post:'3000'
