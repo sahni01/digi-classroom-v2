@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/anim.css">
+    <script src="js/script.js" defer></script>
+    <title>Digi-Classroom</title>
+</head>
+<body>
+    
+    <header class="head">
+        <div class="smart">
+            <div class="brand">
+                <h2>Digi-Classroom</h2>
+            </div>
+            <div class="menu">&#8801; </div>
+            
+        </div>
+        
+        <div class="buttons">
+            <a href="#create-class-container">
+            <div class="create">
+                <p>Create-class</p>
+            </div></a>
+            <a href="#join-class-container">
+            <div class="join">
+                <p>Join-class</p>
+            </div></a>
+        </div>
+    </header>
+    <section id="page">
+        <div class="container">
+            <h2 id="text">A Platform between Teachers and Students</h2>
+            <div class="buttons buttons-page">
+                <a href="#create-class-container" class="create create-button">
+                <div >
+                    <p>Create-class</p>
+                </div></a>
+                <a href="#join-class-container" class="join join-button">
+                <div >
+                    <p>Join-class</p>
+                </div></a>
+            </div>
+        </div>
+
+        <div class="img">
+
+            <img src="./img/show.png" id='image'>
+
+        </div>
+
+        
+                    
+    </section >
+
+    <section id="forms-section">
+
+        <div id="create-class-container">
+            <div id="head">
+                <h2 id="head-text">Create Classroom</h2>
+
+            </div>
+            <div id="form">
+            <label>Name</label>
+            <input type="text" placeholder="Enter Name">
+            <label>Room Name</label>
+            <input type="text" placeholder="Enter Room-Name">
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+            
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" name="confirm-password">
+        </div>
+            <div class="create create-button" id="create-class-button">
+                <p>Create Now</p>
+            </div>
+
+        </div>
+        <div id="join-class-container">
+            <div id="head">
+                <h2 id="head-text">Join Classroom</h2>
+
+            </div>
+            <div id="form">
+                <label>Name</label>
+
+                <input type="text" placeholder="Enter Name">
+                <label>RoomId</label>
+                <input type="text" placeholder="Enter Room-Id" id="roomid">
+                <label>Password</label>
+                <input type="password" placeholder="Password" name="password">
+            </div>
+            <div class="join join-button" id="join-class-button">
+                <p>Join Now</p>
+            </div>
+
+        </div>
+
+    </section>
+    
+    
+</body>
+<script src="./js/hamburger.js" defer></script>
+<script src="./js/auth.js" defer></script>
+</html>

@@ -9,6 +9,7 @@ function connect(){
     var mypeer = new Peer(undefined,{
         path:'peerjs',
         host:'/',
+        post:'3000'
         
         
     })

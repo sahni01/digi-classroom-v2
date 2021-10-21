@@ -1,0 +1,11 @@
+@keyframes load{
+    0%{
+        position: static;
+        display: none;
+    }
+    100%{
+        margin-top: 0rem;
+        display: block;
+
+    }
+}

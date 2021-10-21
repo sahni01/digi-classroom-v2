@@ -22,11 +22,11 @@ app.set('view engine','ejs')
 
 
 
-app.get('/',async(req,res)=>{
+app.get('/join',async(req,res)=>{
     res.redirect(`${uuidV4()}`)
 })
 
-app.get('/:roomId',(req,res)=>{
+app.get('/join/:roomId',(req,res)=>{
     res.render('class',{roomId:req.params.roomId})
 })
 
