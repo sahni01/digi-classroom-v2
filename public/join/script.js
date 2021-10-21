@@ -16,7 +16,7 @@ function connect(){
     })
     console.log(name)
     mypeer.on('open',(id)=>{
-        socket.emit('join-room',Room_Id,name)
+        socket.emit('join-room',Room_Id,id,name)
         
     })
     
@@ -35,8 +35,8 @@ function connect(){
             
             addvideostream(video,stream)
         
-            socket.on('user-connected',(userId)=>{
-                console.log('user-connected: '+userId)
+            socket.on('user-connected',(userId,name)=>{
+                console.log('user-connected: '+userId+name)
                 connecttonewuser(userId,stream)
             })
         
