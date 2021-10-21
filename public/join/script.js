@@ -37,7 +37,8 @@ function connect(){
         
             socket.on('user-connected',(userId,name)=>{
                 console.log('user-connected: '+userId+name)
-                connecttonewuser(userId,stream)
+                alert(`${name} joined the class`)
+                connecttonewuser(userId,stream,name)
             })
         
             mypeer.on('call',call=>{
@@ -45,6 +46,9 @@ function connect(){
                 const video =  document.createElement('video')
                 call.on('stream',uservideosstream=>{
                     addvideostream(video,uservideosstream)
+                })
+                call.on('close',()=>{
+                    video.remove()
                 })
             })
         })
@@ -59,7 +63,7 @@ function connect(){
     
     }
     
-    function connecttonewuser(userId,stream){
+    function connecttonewuser(userId,stream,name){
         const call = mypeer.call(userId,stream)
         const video = document.createElement('video')
         call.on('stream',uservideosstream=>{
