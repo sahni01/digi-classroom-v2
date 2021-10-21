@@ -26,11 +26,12 @@ app.get('/join',async(req,res)=>{
     res.redirect(`${uuidV4()}`)
 })
 
-app.get('/join/:roomId',(req,res)=>{
-    
+app.get('/join/:roomId/:name',(req,res)=>{
+
     let name = req.query.name
-    res.render('class',{roomId:req.params.roomId,
-    name:req.query.name
+    res.render('class',{
+        roomId:req.params.roomId,
+        name:req.params.name
     })
 
 })
