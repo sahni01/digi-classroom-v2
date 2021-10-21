@@ -27,7 +27,12 @@ app.get('/join',async(req,res)=>{
 })
 
 app.get('/join/:roomId',(req,res)=>{
-    res.render('class',{roomId:req.params.roomId})
+    
+    let name = req.query.name
+    res.render('class',{roomId:req.params.roomId,
+    name:req.query.name
+    })
+
 })
 
 

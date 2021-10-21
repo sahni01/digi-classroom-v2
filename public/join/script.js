@@ -1,3 +1,4 @@
+const { name } = require("ejs");
 
 
 
@@ -6,7 +7,7 @@ function connect(){
     const socket = io('/')
     
     
-    var mypeer = new Peer(undefined,{
+    var mypeer = new Peer(name,{
         path:'peerjs',
         host:'/',
         post:'3000'
