@@ -40,12 +40,12 @@ app.get('/join/:roomId',(req,res)=>{
 
 io.on('connection',(socket)=>{
     console.log('user connected')
-    socket.on('join-room',(roomId,userId)=>{
+    socket.on('join-room',(roomId,userId,name)=>{
         console.log(roomId);
         socket.join(roomId)
         console.log(userId)
-        socket.to(roomId).emit('user-connected',userId)
-        console.log(roomId,userId)
+        socket.to(roomId).emit('user-connected',userId,name)
+        console.log(roomId,userId,name)
     })
 })
 
