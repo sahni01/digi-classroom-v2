@@ -20,9 +20,9 @@ function connect(){
         
     })
     
-    const videoBoxContainer=document.createElement('div');
-    const username = document.createElement('p') ;
-    username.innerText=name
+    // const videoBoxContainer=document.createElement('div');
+    // const username = document.createElement('p') ;
+    // username.innerText=name
     const video = document.createElement('video');
     video.muted=true
     // video.autoplay=false
@@ -34,58 +34,68 @@ function connect(){
             video:true,
             audio:true
         }).then(stream=>{
-            videoBoxContainer.append(username)
-            addvideostream(video,stream,videoBoxContainer)
+            
+            addvideostream(video,stream)
         
             socket.on('user-connected',(userId,name)=>{
                 console.log('user-connected: '+userId+name)
-                alert(`${name} joined the class`)
-                const videoBoxContainer=document.createElement('div')
-                const username = document.createElement('p');
-                username.innerText=name
-                videoBoxContainer.append(username);
-                connecttonewuser(userId,stream,name,videoBoxContainer)
+                alert(`${name} joined the class`);
+                // const videoBoxContainer=document.createElement('div')
+                // const username = document.createElement('p');
+                // username.innerText=name
+                // videoBoxContainer.append(username);
+                connecttonewuser(userId,stream,name)
             })
         
             mypeer.on('call',call=>{
                 call.answer(stream)
                 const video =  document.createElement('video')
                 call.on('stream',uservideosstream=>{
-                    addvideostream(video,uservideosstream,videoBoxContainer)
+                    addvideostream(video,uservideosstream)
                 })
                 call.on('close',()=>{
                     video.remove()
-                    username.remove()
-                    videoBoxContainer.remove()
+                    
 
                 })
             })
         })
     }
     load();
-    function addvideostream(video,stream,videoBoxContainer){
+    function addmyvideostream(video,stream){
         video.srcObject = stream
         video.addEventListener('loadedmetadata',()=>{
             video.play()
         })
-        videoBoxContainer.append(video)
-        videoBox.append(videoBoxContainer);
+        
+        videoBox.append(video);
+    
+    }
+    function addvideostream(video,stream){
+        video.srcObject = stream
+        video.addEventListener('loadedmetadata',()=>{
+            video.play()
+        })
+        
+        videoBox.append(video);
     
     }
     
-    function connecttonewuser(userId,stream,name,videoBoxContainer){
+    function connecttonewuser(userId,stream,name){
         const call = mypeer.call(userId,stream)
         const video = document.createElement('video')
         call.on('stream',uservideosstream=>{
-            addvideostream(video,uservideosstream,videoBoxContainer)
+            addvideostream(video,uservideosstream)
         })
         call.on('close',()=>{
             video.remove()
-            username.remove()
-            videoBoxContainer.remove()
+            
         })
     }
 
     
+    socket.on('all-users',(users)=>{
+        console.log(users)
+    })
 }
 connect();
