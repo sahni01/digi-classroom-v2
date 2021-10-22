@@ -1,3 +1,6 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 video{
     width: 300px;
     height:300px;
@@ -17,4 +20,10 @@ video{
 }
 body{
     background-color: black                                                                                                                                 ;
+}
+p{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
 }
