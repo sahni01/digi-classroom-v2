@@ -34,7 +34,7 @@ function connect(){
             video:true,
             audio:true
         }).then(stream=>{
-            
+            videoBoxContainer.append(username)
             addvideostream(video,stream,videoBoxContainer)
         
             socket.on('user-connected',(userId,name)=>{
