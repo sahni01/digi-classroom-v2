@@ -21,7 +21,8 @@ function connect(){
     })
     
     const videoBoxContainer=document.createElement('div');
-    const username = document.createElement('p').innerText=name ;
+    const username = document.createElement('p') ;
+    username.innerText=name
     const video = document.createElement('video');
     video.muted=true
     // video.autoplay=false
@@ -40,7 +41,8 @@ function connect(){
                 console.log('user-connected: '+userId+name)
                 alert(`${name} joined the class`)
                 const videoBoxContainer=document.createElement('div')
-                const username = document.createElement('p').innerText=name;
+                const username = document.createElement('p');
+                username.innerText=name
                 videoBoxContainer.append(username);
                 connecttonewuser(userId,stream,name,videoBoxContainer)
             })
