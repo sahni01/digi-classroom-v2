@@ -1,7 +1,6 @@
 
 
-let videoBoxContainer;
-let username ;
+
 
 function connect(){
 
@@ -21,7 +20,8 @@ function connect(){
         
     })
     
-    
+    const videoBoxContainer=document.createElement('div');
+    const username = document.createElement('p').innerText=name ;
     const video = document.createElement('video');
     video.muted=true
     // video.autoplay=false
@@ -34,15 +34,15 @@ function connect(){
             audio:true
         }).then(stream=>{
             
-            addvideostream(video,stream)
+            addvideostream(video,stream,videoBoxContainer)
         
             socket.on('user-connected',(userId,name)=>{
                 console.log('user-connected: '+userId+name)
                 alert(`${name} joined the class`)
-                videoBoxContainer=document.createElement('div')
-                username = document.createElement('p').innerText=name;
+                const videoBoxContainer=document.createElement('div')
+                const username = document.createElement('p').innerText=name;
                 videoBoxContainer.append(username);
-                connecttonewuser(userId,stream,name)
+                connecttonewuser(userId,stream,name,videoBoxContainer)
             })
         
             mypeer.on('call',call=>{
@@ -61,7 +61,7 @@ function connect(){
         })
     }
     load();
-    function addvideostream(video,stream){
+    function addvideostream(video,stream,videoBoxContainer){
         video.srcObject = stream
         video.addEventListener('loadedmetadata',()=>{
             video.play()
@@ -71,11 +71,11 @@ function connect(){
     
     }
     
-    function connecttonewuser(userId,stream,name){
+    function connecttonewuser(userId,stream,name,videoBoxContainer){
         const call = mypeer.call(userId,stream,name)
         const video = document.createElement('video')
         call.on('stream',uservideosstream=>{
-            addvideostream(video,uservideosstream)
+            addvideostream(video,uservideosstream,videoBoxContainer)
         })
         call.on('close',()=>{
             video.remove()
