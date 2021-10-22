@@ -15,7 +15,7 @@ const PORT = process.env.PORT||3000
 app.use(express.static('public'))
 app.set('view engine','ejs')
 
-let users = [];
+var users = [];
 
 
 
@@ -71,7 +71,7 @@ function adduser(roomId,userId,name){
 }
 
 function deleteuser(userId){
-    users = users.filter(user=>users.userId!=userId);
+    users = users.filter(user=>user.userId!=userId);
 
 }
 
