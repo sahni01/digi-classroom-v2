@@ -105,6 +105,7 @@ function connect(){
             <p>${users[i].name}</p>
             </div>
             `
+            i++;
         }
     })
 }
