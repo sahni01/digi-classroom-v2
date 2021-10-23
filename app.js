@@ -42,7 +42,7 @@ app.get('/join/:roomId',(req,res)=>{
 io.on('connection',(socket)=>{
     console.log('user connected')
     socket.on('join-room',(roomId,userId,name)=>{
-        console.log(roomId,name);
+        console.log(name +'joined room:'+roomId);
         socket.join(roomId);
         // console.log(userId,name)
         adduser(roomId,userId,name);

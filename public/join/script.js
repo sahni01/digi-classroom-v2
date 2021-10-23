@@ -1,5 +1,5 @@
 
-
+let usersContainer = document.getElementById('users-constainer')
 
 
 function connect(){
@@ -96,6 +96,16 @@ function connect(){
     
     socket.on('all-users',(users)=>{
         console.log(users)
+        usersContainer.innerHTML='';
+        let userslen = users.length;
+        let i=0;
+        while(i<=userslen){
+            usersContainer.innerHTML+=`
+            <div class='user'>
+            <p>${users[i].name}</p>
+            </div>
+            `
+        }
     })
 }
 connect();

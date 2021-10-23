@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/4fe6022375.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
     <title>Class</title>
@@ -17,13 +18,40 @@
         </script>
 </head>
 <body>
-    <div class="title">
-        <h2>Classroom </h2> <%=roomId%>
-    </div>
+    <div class="container">
     <div class="video-box">
         
     </div>
-    
+    <div class="users">
+        <h2>Students</h2>
+        <div id="users-container">
+            
+
+        </div>
+
+    </div>
+</div>
+<div class="main-controller">
+    <div class="controllers">
+        <div class="microphone">
+            <i class="fas fa-microphone"></i>
+            <p>Mute</p>
+        </div>
+        <div class="video">
+            <i class="fas fa-video"></i>
+            <p>Video</p>
+        </div>
+        <a href="#users" class="students">
+            <i class="fas fa-user-friends"></i>
+            <p>Students</p>
+        </a>
+        <div class="leave">
+            <i class="fas fa-sign-out-alt"></i>
+            <p>Leave Class</p>
+        </div>
+
+    </div>
+</div>
     
 </body>
 <script src="script.js" defer></script>
