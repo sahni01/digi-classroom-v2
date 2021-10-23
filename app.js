@@ -54,6 +54,7 @@ io.on('connection',(socket)=>{
             socket.leave(roomId);
             deleteuser(userId);
             console.log('user-disconnected'+userId)
+            socket.to(roomId).emit('user-disconnected',userId,name);
             io.to(roomId).emit('all-users',getallusers(roomId));
 
         })

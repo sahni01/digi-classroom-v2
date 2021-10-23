@@ -1,6 +1,6 @@
 
 let usersContainer = document.getElementById('users-container')
-
+let myVideostream;
 
 function connect(){
 
@@ -34,7 +34,7 @@ function connect(){
             video:true,
             audio:true
         }).then(stream=>{
-            
+            myVideostream=stream;
             addvideostream(video,stream)
         
             socket.on('user-connected',(userId,name)=>{
@@ -93,7 +93,9 @@ function connect(){
         })
     }
 
-    
+    socket.on('user-disconnected',(userId,name)=>{
+        alert(name+'leaved the Class');
+    })
     socket.on('all-users',(users)=>{
         console.log(users)
         usersContainer.innerHTML='';
