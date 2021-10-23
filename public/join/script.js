@@ -2,7 +2,7 @@
 let usersContainer = document.getElementById('users-container')
 let myVideostream;
 
-function connect(){
+
 
     const socket = io('/')
     
@@ -111,5 +111,4 @@ function connect(){
             i++;
         }
     })
-}
-connect();
+
