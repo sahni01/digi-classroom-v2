@@ -9,7 +9,7 @@ microphoneButton.addEventListener('click',muteUnmute);
 videoButton.addEventListener('click',videoOnOff);
 leaveButton.addEventListener('click',()=>{
 
-    socket.emit('disconnect',Room_Id,userid,name);
+    socket.emit('disconnect',Room_Id,name);
     window.location.href('https://vdeo-call-app.herokuapp.com');
 
 })
