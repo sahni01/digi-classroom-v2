@@ -35,6 +35,7 @@ p{
 h2{
     color: white;
     text-align: center;
+    margin: 20px;
 }
 .container{
     display:  flex;
@@ -96,8 +97,20 @@ h2{
         
     
 }
+#back{
+    padding-top:10px;
+    font-size: 2rem;
+    display: none;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 a{
     text-decoration: none;
+    color:  white;
 }
 .microphone:hover,.video:hover,.students:hover,.leave:hover{
     background: rgb(34, 36, 38)
@@ -127,5 +140,22 @@ a{
     .controllers{
         width: 100%;
     }
+    #back{
+        display:block; 
     
+    }
+    
+}
+.user{
+    border: 2px solid rgb(15, 15, 15);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+#users-container{
+    
+    padding: 10px;
 }
