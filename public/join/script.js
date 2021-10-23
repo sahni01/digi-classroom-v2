@@ -1,5 +1,5 @@
 
-let usersContainer = document.getElementById('users-constainer')
+let usersContainer = document.getElementById('users-container')
 
 
 function connect(){
