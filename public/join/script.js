@@ -98,6 +98,7 @@ function connect(){
         console.log(users)
         usersContainer.innerHTML='';
         let userslen = users.length;
+        userslen = userslen-1;
         let i=0;
         while(i<=userslen){
             usersContainer.innerHTML+=`
