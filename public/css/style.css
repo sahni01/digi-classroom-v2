@@ -216,3 +216,45 @@ input:focus{
 /* #text{
     animation: load 0.5s ease-in-out;
 } */
+#CreateResult{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(51, 207, 30, 0.623);
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+#result-container{
+    text-align: center;
+    color: black;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#share-button{
+    text-decoration: none;
+    color: white;
+    background-color:green;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 10px;
+    
+    
+}
+#start-class{
+    text-decoration: none;
+    color: white;
+    background-color:rgb(50, 50, 255);
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 10px;
+    
+}

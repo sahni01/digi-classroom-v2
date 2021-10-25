@@ -5,19 +5,19 @@ const server = http.Server(app);
 const io = require('socket.io')(server);
 const {v4:uuidV4} = require('uuid')
 const {ExpressPeerServer} = require('peer')
-
+const usersmodel = require('./db/models/users');
 const peerServer = ExpressPeerServer(server,{
     debug:true,
 })
 app.use('/peerjs',peerServer)
-const PORT = process.env.PORT||3000
+const PORT = process.env.PORT||8000
 
 app.use(express.static('public'))
 app.set('view engine','ejs')
-
+require('./db/connection');
 var users = [];
 
-
+app.use(express.json())
 
 
 
@@ -25,15 +25,77 @@ var users = [];
 // app.get('/join',async(req,res)=>{
 //     res.redirect(`${uuidV4()}`)
 // })
+app.post('/create',async(req,res)=>{
+    console.log(req.body)
 
-app.get('/join/:roomId',(req,res)=>{
+    const password = req.body.password;
+    const cpassword = req.body.cpassword;
+
+    console.log(req.body);
+
+    if(password==cpassword){
+
+        const roomid = uuidV4()
+
+        const user = usersmodel({
+            name:req.body.name,
+            roomName:req.body.roomName,
+            email:req.body.email,
+            password:password,
+            roomid:roomid
+        });
+
+        try{
+
+            const userCreated = await user.save()
+            console.log('user saved :'+userCreated );
+            res.json(userCreated);
+        }catch{err=>{
+            console.log(err);
+        }}
+
+
+
+
+
+    }
+
+
+})
+
+
+app.get('/join/:roomId',async(req,res)=>{
+
+
+    roomId = req.params.roomId;
+    password = req.query.password;
+
+    try{
+
+
+        const user = await usersmodel.find({
+            roomid:roomId
+        })
+    
+        if(user.password==password){
+    
+            res.render('class',{
+                roomId:req.params.roomId,
+                
+            })
+        }else{
+            res.redirect("/");
+        }
+    }catch{err=>{
+        res.send(err).status(404)
+
+    }
+    }
+
+
 
     // let name = req.query.name
     // console.log(req.query.name)
-    res.render('class',{
-        roomId:req.params.roomId,
-        name:req.query.name
-    })
 
 })
 

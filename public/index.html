@@ -59,22 +59,23 @@
     <section id="forms-section">
 
         <div id="create-class-container">
+            <div id="CreateResult"></div>
             <div id="head">
                 <h2 id="head-text">Create Classroom</h2>
 
             </div>
             <div id="form">
             <label>Name</label>
-            <input type="text" placeholder="Enter Name">
+            <input type="text" placeholder="Enter Name" id="name" name="name">
             <label>Room Name</label>
-            <input type="text" placeholder="Enter Room-Name">
+            <input type="text" placeholder="Enter Room-Name" id="roomName" name="roomName">
             <label>Email</label>
-            <input type="email" placeholder="Email">
+            <input type="email" placeholder="Email" id="email" name="email">
             
             <label>Password</label>
-            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Password" name="password" id="password">
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password" name="confirm-password">
+            <input type="password" placeholder="Confirm Password" name="confirm-password" id="cpassword">
         </div>
             <div class="create create-button" id="create-class-button">
                 <p>Create Now</p>
@@ -87,9 +88,7 @@
 
             </div>
             <div id="form">
-                <label>Name</label>
-
-                <input type="text" placeholder="Enter Name" id="name">
+                
                 <label>RoomId</label>
                 <input type="text" placeholder="Enter Room-Id" id="roomid">
                 <label>Password</label>
