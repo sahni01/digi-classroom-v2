@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/anim.css">
     <script src="js/script.js" defer></script>
     <title>Digi-Classroom</title>
+    
 </head>
 <body>
     
@@ -83,6 +84,9 @@
 
         </div>
         <div id="join-class-container">
+            <div class="res">
+                <p id="res"></p>
+            </div>
             <div id="head">
                 <h2 id="head-text">Join Classroom</h2>
 
@@ -90,9 +94,9 @@
             <div id="form">
                 
                 <label>RoomId</label>
-                <input type="text" placeholder="Enter Room-Id" id="roomid">
+                <input type="text" placeholder="Enter Room-Id" id="roomid" >
                 <label>Password</label>
-                <input type="password" placeholder="Password" name="password" id="password">
+                <input type="password" placeholder="Password" name="password" id="password" value="">
             </div>
             <div class="join join-button" id="join-class-button">
                 <p>Join Now</p>
@@ -101,7 +105,15 @@
         </div>
 
     </section>
-    
+    <script>
+        let res= "<%=res%>"
+        console.log(res)
+        if(res!=""){
+            document.getElementById('res').innerText=res;
+            document.getElementsByClassName('res')[0].style.display='flex'
+
+        }
+    </script>
     
 </body>
 <script src="./js/hamburger.js" defer></script>

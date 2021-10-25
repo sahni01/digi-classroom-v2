@@ -258,3 +258,16 @@ input:focus{
     margin: 10px;
     
 }
+.res{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 0, 0, 0.658);
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    width: 60%;
+}

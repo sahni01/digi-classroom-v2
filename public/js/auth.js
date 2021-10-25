@@ -1,4 +1,4 @@
-let join = document.getElementById('join-class-button');
+const join = document.getElementById('join-class-button');
 
 
 join.addEventListener('click',()=>{

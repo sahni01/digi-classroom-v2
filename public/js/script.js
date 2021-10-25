@@ -42,7 +42,7 @@ createButtton.addEventListener('click',()=>{
             <div id="result-container">
             <p>Congratulations,  Your Room generated Successfully Here are your details. Roomid:${result.roomid} and password:${result.password}</p>
             <a href='https://wa.me/?text=Dear%20Students%2C%0AHere%20are%20the%20details%20to%20join%20${result.roomName}%20class%20on%20Digi-classroom.%0Aroomid%3A${result.roomid}%0Apassword%3A${result.password}%0Aalso%20you%20can%20join%20by%20clicking%20on%20the%20link%20%3A%20https%3A%2F%2Fvdeo-call-app.herokuapp.com%2Fjoin%2F${result.roomid}%3Fpassword%3D${result.password}' id="share-button" target="_blank">SHARE</a>
-            <a href='/join/${result.roomid}?name=${result.name}' id="start-class" target="_blank">Start-Class</a>
+            <a href='/join/${result.roomid}?password=${result.password}' id="start-class" target="_blank">Start-Class</a>
             </div>
             `
 

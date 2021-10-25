@@ -25,6 +25,12 @@ app.use(express.json())
 // app.get('/join',async(req,res)=>{
 //     res.redirect(`${uuidV4()}`)
 // })
+
+app.get("/",(req,res)=>{
+    res.render('index',{
+        res:req.query.res
+    })
+})
 app.post('/create',async(req,res)=>{
     console.log(req.body)
 
@@ -64,30 +70,35 @@ app.post('/create',async(req,res)=>{
 })
 
 
-app.get('/join/:roomId',async(req,res)=>{
-
-
-    roomId = req.params.roomId;
-    password = req.query.password;
+app.get('/join/:roomid',async(req,res)=>{
+    
+    
+    let roomid = req.params.roomid;
+    let password = req.query.password;
+    console.log(password);
 
     try{
 
 
-        const user = await usersmodel.find({
-            roomid:roomId
+        const user = await usersmodel.findOne({
+            roomid:roomid
         })
-    
-        if(user.password==password){
-    
+        console.log(user)
+        if(user.password===password){
+            console.log('login')
             res.render('class',{
-                roomId:req.params.roomId,
-                
+                roomId:roomid
             })
         }else{
-            res.redirect("/");
+            console.log('wrong password')
+            res.redirect('/?res=invalid credentials');
         }
+    
+    
     }catch{err=>{
-        res.send(err).status(404)
+        // res.send(err).status(404)
+        console.log('invalid credentials')
+        res.redirect('/?res=invalid credentials');
 
     }
     }
