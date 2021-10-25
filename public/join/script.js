@@ -94,7 +94,7 @@ let myVideostream;
     }
 
     socket.on('user-disconnected',(userId,name)=>{
-        alert(name+'leaved the Class');
+        alert(name+' leaved the Class');
     })
     socket.on('all-users',(users)=>{
         console.log(users)
