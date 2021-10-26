@@ -84,7 +84,10 @@ app.get('/join/:roomid',async(req,res)=>{
             roomid:roomid
         })
         console.log(user)
-        if(user.password===password){
+        if(user==null){
+            console.log('invalid credentials')
+            res.redirect('/?res=invalid credentials');
+        }else if(user.password===password){
             console.log('login')
             res.render('class',{
                 roomId:roomid,
@@ -98,7 +101,8 @@ app.get('/join/:roomid',async(req,res)=>{
     
     }catch{err=>{
         // res.send(err).status(404)
-        console.log('invalid credentials')
+        console.log(err);
+        // console.log('invalid credentials')
         res.redirect('/?res=invalid credentials');
 
     }

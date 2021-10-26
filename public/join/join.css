@@ -43,7 +43,13 @@ h2{
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-    width: 100%
+    width: 100%;
+    
+    
+}
+.teacher{
+    position: fixed;
+    top: 0
 }
 .users{
 /*     border: 2px solid white; */

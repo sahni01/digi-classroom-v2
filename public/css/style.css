@@ -271,3 +271,46 @@ input:focus{
     display: none;
     width: 60%;
 }
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+footer{
+    height: auto;
+/*     border: 2px solid black; */
+}
+.socials{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem
+    
+}
+.socials a{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.socials i{
+    font-size: 2rem;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about h2{
+    text-align: center;
+    font-size: 3rem
+}
+
+.about h3{
+    text-align: center;
+    
+}
