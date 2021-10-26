@@ -87,7 +87,8 @@ app.get('/join/:roomid',async(req,res)=>{
         if(user.password===password){
             console.log('login')
             res.render('class',{
-                roomId:roomid
+                roomId:roomid,
+                teacher:user.name
             })
         }else{
             console.log('wrong password')

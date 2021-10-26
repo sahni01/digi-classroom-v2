@@ -12,13 +12,16 @@
     <title>Class</title>
     <script>
         const Room_Id = "<%=roomId%>";
+        const teacherName = "<%=teacher%>"
+        console.log(teacherName);
         const name = prompt("Enter Your Name it's mendatory for Attendance records ");
-        console.log(Room_Id)
-        console.log(name)
+        // console.log(Room_Id)
+        // console.log(name)
         </script>
 </head>
 <body>
     <div class="container">
+        <div class="teacher"></div>
     <div class="video-box">
         
     </div>
@@ -58,6 +61,11 @@
 </div>
     
 </body>
+<script>
+    document.getElementsByClassName('teacher')[0].innerHTML=`
+    <p>Digi-classroom tutor:${teacherName}</p>
+    `
+</script>
 <script src="script.js" defer></script>
 <script src="controller.js" defer></script>
 </html>
