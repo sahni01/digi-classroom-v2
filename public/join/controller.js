@@ -10,7 +10,7 @@ videoButton.addEventListener('click',videoOnOff);
 leaveButton.addEventListener('click',()=>{
 
     
-    window.location.href="https://vdeo-call-app.herokuapp.com";
+    window.location.href="https://digi-classroom.onrender.com/";
 
 })
 
